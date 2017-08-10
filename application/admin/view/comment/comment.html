@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>用户管理</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户管理 <span class="c-gray en">&gt;</span> 店员信息 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="mt-20">
+	<table class="table table-border table-bordered table-hover table-bg table-sort">
+		<thead>
+			<tr class="text-c">
+				<th width="25"></th>
+				<th width="80">商品</th>
+				<th width="100">用户名</th>
+				<th width="90">手机</th>
+				<th width="40">评价内容</th>
+				<th width="100" >操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		{foreach $res as $val}
+			<tr class="text-c">
+				<td><input type="checkbox" name="" ></td>
+				<td><img src="{$val['src']}" style="width: 60px;height: 60px;"> </td>
+				<td>{$val['realname']}</td>
+				<td>{$val['phone']}</td>
+				<td>{$val['content']}</td>
+				<!-- <td>
+					<input type="hidden" name="" value="{$val['id']}">
+					<a href="#"  class="aa">删除</a>
+					<a href="#"  class="aa"><</a>
+				</td> -->
+				<td class="td-manage">
+				<a title="编辑" href="javascript:;" onclick="member_edit('回复评论','/admin/comment/email?uid={$val.uid}',{$val['uid']},500,320)" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> 
+				<input type="hidden" name="" value="{$val['id']}"><a title="删除" href="javascript:;" class="ml-5 aa" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+			</tr>
+		{/foreach}
+		</tbody>
+	</table>
+	</div>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__ADMIN_PUB__lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__ADMIN_PUB__lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__ADMIN_PUB__static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="__ADMIN_PUB__static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__ADMIN_PUB__lib/My97DatePicker/4.8/WdatePicker.js"></script> 
+<script type="text/javascript" src="__ADMIN_PUB__lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="__ADMIN_PUB__lib/laypage/1.2/laypage.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+
+/*用户-编辑*/
+function member_edit(title,url,id,w,h){
+	layer_show(title,url,w,h);
+}
+
+
+$('.aa').click(function() {
+	var id = $(this).prev().val();
+	// console.log(id);
+	$.post("{:url('admin/comment/delComment')}",{id:id},function(data){
+		// console.log(data);
+		if (data == 1) {
+			location.reload();
+		}
+	})
+	//alert('sdf');
+})
+</script>

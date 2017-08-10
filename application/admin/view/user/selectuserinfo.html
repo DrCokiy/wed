@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	
+	<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/css/style.css" />
+<script type="text/javascript" src="__ADMIN_PUB__lib/jquery/1.11.1/jquery.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="page-container">
+	<form >
+	{foreach $data as $value}
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>用户名：</label>
+			<div class=" col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$value.realname}" placeholder="{$value.realname}" disabled name="realname">
+			</div>
+		</div>
+		<br>
+		<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>性别：</label>
+		<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+			{if(0 == $value.sex)}
+			<div class="radio-box">
+				
+				<label for="sex-1">男</label>
+			</div>
+			{else}
+			<div class="radio-box">
+				
+				<label for="sex-2">女</label>
+			</div>
+			{/if}
+		</div>
+	</div>
+		<br>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>手机：</label>
+			<div class=" col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$value.phone}" disabled placeholder=""  name="phone">
+			</div>
+		</div>
+	<br>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>邮箱：</label>
+			<div class=" col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="" name="email" disabled value="{$value.email}">
+			</div>
+		</div>
+		<br>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">地址：</label>
+			<div class=" col-xs-8 col-sm-9"> <span class="select-box">
+			{if !empty($value.city)}
+			<div class=" col-xs-8 col-sm-9">
+				{$value.city}
+			</div>
+			{else}
+				<div class=" col-xs-8 col-sm-9">
+					未填写
+				</div>
+			{/if}
+				</span> </div>
+			
+		</div>
+		<br>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>加入时间：</label>
+			<div class=" col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="" name="email" disabled value="{$value.regtime | date='Y-m-d H:i:s',###}">
+			</div>
+		</div>
+		{/foreach}
+		<br>
+		
+		<div class="pagination" style="float: right;margin-top: -15px;">{$data->render()}</div>
+
+
+	</form>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	
+
+</script>

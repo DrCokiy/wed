@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <meta charset="utf-8" />
+  <title>Musik | Web Application</title>
+  <link rel="stylesheet" href="__INDEX_PUB__js/jPlayer/jplayer.flat.css" type="text/css" />
+  <link rel="stylesheet" href="__INDEX_PUB__css/bootstrap1.css" type="text/css" />
+  <link rel="stylesheet" href="__INDEX_PUB__css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="__INDEX_PUB__css/app.css" type="text/css" />  
+</head>
+<body class="">
+          <section class="vbox">
+            <section class="scrollable wrapper-lg">
+              <div class="row">
+                <!-- <div class="col-sm-8"> 想调多大自己设定，这里设置横着的大小-->
+                  <div class="panel">
+<!-- video player -->
+                    <div id="jp_container_1">
+                      <div class="jp-type-single pos-rlt">
+                        <!-- 这里调用了一个节点，导致不可见 -->
+                        <div id="videotitle" style="display:none;">张加胖</div><!-- $result[0]['videoname'] -->
+                        <div id="videoimage" style="display:none;">dog.jpg</div><!-- $result[0]['vimage'] -->
+                        <div id="videourl" style="display:none;">http://www.zjp.com/suiyue.mp4</div><!-- $result[0]['vurl'] -->
+                        <div id="jplayer_1" class="jp-jplayer jp-video">
+                            
+                        </div>
+                       <!-- 这他妈结束了到 -->
+                        <div class="jp-gui">
+                          <div class="jp-video-play">
+                            <a class="fa fa-5x text-white fa-play-circle"></a>
+                          </div>
+                          <div class="jp-interface bg-info padder">
+                            <div class="jp-controls">
+                              <div>
+                                <a class="jp-play"><i class="icon-control-play i-2x"></i></a>
+                                <a class="jp-pause hid"><i class="icon-control-pause i-2x"></i></a>
+                              </div>
+                              <div class="jp-progress">
+                                <div class="jp-seek-bar dker">
+                                  <div class="jp-play-bar dk">
+                                  </div>
+                                  <div class="jp-title text-lt">
+                                    <ul>
+                                      <li></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="hidden-xs hidden-sm jp-current-time text-xs text-muted"></div>
+                              <div class="hidden-xs hidden-sm jp-duration text-xs text-muted"></div>
+                              <div class="hidden-xs hidden-sm">
+                                <a class="jp-mute" title="mute"><i class="icon-volume-2"></i></a>
+                                <a class="jp-unmute hid" title="unmute"><i class="icon-volume-off"></i></a>
+                              </div>
+                              <div class="hidden-xs hidden-sm jp-volume">
+                                <div class="jp-volume-bar dk">
+                                  <div class="jp-volume-bar-value lter"></div>
+                                </div>
+                              </div>
+                              <div>
+                                <a class="jp-full-screen" title="full screen"><i class="fa fa-expand"></i></a>
+                                <a class="jp-restore-screen" title="restore screen"><i class="fa fa-compress text-lt"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="jp-no-solution hide">
+                          <span>Update Required</span>
+                          To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                        </div>
+                      </div>
+                    </div>
+<!-- / video player -->
+                  </div>
+        
+                <!-- </div>想调多大自己设定，这里设置横着的大小 -->
+              </div>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+      </section> 
+  <script src="__INDEX_PUB__js/jquery.min1.js"></script>
+  <!-- Bootstrap -->
+  <script src="__INDEX_PUB__js/bootstrap1.js"></script>
+  <!-- App -->
+  <script type="text/javascript" src="__INDEX_PUB__js/jPlayer/jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="__INDEX_PUB__js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+  <!-- <script type="text/javascript" src="__INDEX_PUB__js/jPlayer/demo.js"></script> -->
+</body>
+</html>
+          <script type="text/javascript">
+            $(document).ready(function(){
+  // video
+              $("#jplayer_1").jPlayer({
+              ready: function () {
+                var vurl = $('#videourl').text();
+                var vimage = $('#videoimage').text();
+                var title = $("#videotitle").text();
+                console.log(title);
+
+                $(this).jPlayer("setMedia", {
+                  title: title,
+                  m4v: "http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.m4v",
+                  ogv: "http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.ogv",
+                  webmv: vurl,
+                  poster: vimage,
+                });
+              },
+              swfPath: "js",
+              supplied: "webmv, ogv, m4v",
+              size: {
+                width: "100%",
+                height: "auto",
+                cssClass: "jp-video-360p"
+              },
+              globalVolume: true,
+              smoothPlayBar: true,
+              keyEnabled: true
+            });
+          });
+                
+            </script>
+
+
+<!--视屏啊啊啊啊啊啊啊啊啊-->
+

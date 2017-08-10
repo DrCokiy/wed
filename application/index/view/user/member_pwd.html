@@ -1,0 +1,492 @@
+<html ><head>
+<meta charset="utf-8"/>
+<link href="__INDEX_PUB__css/same.css?v=1.3.7.2" type="text/css" rel="stylesheet"/>
+<script src="__INDEX_PUB__js/jquery.js" type="text/javascript"></script> 
+<script src="__INDEX_PUB__js/index.js?virsion=1.3.7.2" type="text/javascript"></script>
+    <title>个人中心 - 修改密码</title>
+    <link href="__INDEX_PUB__css/same.css?v=1.3.7.2" type="text/css" rel="stylesheet"><link href="__INDEX_PUB__css/member.css?v=1.3.6.0" type="text/css" rel="stylesheet">
+    <script src="__INDEX_PUB__js/member.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            $("#ctl00_content_pwd1").keypress(function () {
+                var pwd1 = $("#ctl00_content_pwd1").val();
+                if (pwd1.length >= 5 && pwd1.length < 9) {
+                    $("#rou").addClass('mb_red-color');
+                    $("#zhong").removeClass('mb_red-color');
+                    $("#strong").removeClass('mb_red-color');
+                }
+                if (pwd1.length >= 9 && pwd1.length < 12) {
+                    $("#rou").addClass('mb_red-color');
+                    $("#zhong").addClass('mb_red-color');
+                    $("#strong").removeClass('mb_red-color');
+
+                }
+                if (pwd1.length >= 12 && pwd1.length < 20) {
+                    $("#rou").addClass('mb_red-color');
+                    $("#zhong").addClass('mb_red-color');
+                    $("#strong").addClass('mb_red-color');
+                }
+                
+            });
+
+            $("#ctl00_content_pwd1").blur(function () {
+                var pwd1 = $("#ctl00_content_pwd1").val();
+                if (pwd1.length < 5 || pwd1.length > 20) {
+                    $("#txtshow").text("密码长度不正确！");
+                    $("#rou").removeClass('mb_red-color');
+                    $("#zhong").removeClass('mb_red-color');
+                    $("#strong").removeClass('mb_red-color');
+                    $("#ctl00_content_pwd1").val("");
+                    $("#showr").show();
+                    $("#show_wrong").show();
+                    return false;
+                } else {
+                    $("#showr").hide();
+                    $("#show_wrong").hide();
+                }
+            });
+            $("#ctl00_content_pwd2").blur(function () {
+                var pwd1 = $("#ctl00_content_pwd1").val();
+                var pwd2 = $("#ctl00_content_pwd2").val();
+                if (pwd1 != pwd2) {
+                    $("#txtwrong").text("两次密码输入不一致！");
+                    $("#ctl00_content_pwd2").val("");
+                    $(".againpwd").show();
+                    return false;
+                } else {
+                    $(".againpwd").hide();
+                }
+            });
+        });
+
+        function check() {
+            var pwd = $("#ctl00_content_pwd").val();
+            var pwd1 = $("#ctl00_content_pwd1").val();
+            var pwd2 = $("#ctl00_content_pwd2").val();
+            if (pwd=="") {
+                alert("请输入原始密码！");
+                return false;
+            }
+            if (pwd1 == "" || pwd2 == "") {
+                $("#txtwrong").text("请输入密码！");
+                $(".againpwd").show();
+                return false;
+            }
+    
+            if (pwd1 != pwd2) {
+
+                $("#txtwrong").text("两次密码输入不一致！");
+                $(".againpwd").show();
+                return false;
+            }
+            // console.log(pwd);
+            // console.log(pwd1);
+            $.post("{:url('index/user/repassword')}",{
+                password:pwd,
+                newpassword:pwd1
+            },function(data){
+                //console.log(data);
+                if (data == 2) {
+                    alert('旧密码不正确');
+                }else if(data == 1){
+                    alert("更改成功");
+                }
+            });
+        }
+    </script>
+<body>
+<div>
+<!--头部-->
+<div class="cmain">
+    <div class="headtop">
+        <!--头部左边-->
+        <div class="top-left fl">
+            <a title="Darry Ring" href="index.html">
+                <img width="187" height="42" alt="Darry Ring官网" src="__INDEX_PUB__images/logo.png">
+            </a><span style="font-weight: normal;">绮丽魅纱欢迎您</span>
+        </div>
+        <!--头部左边end-->
+        <!--头部右边-->
+        <div class="top-right fr">
+            <!--登录注册-->
+            <ul class="tright-ul fl">
+                <div id="ctl00_ucheader_pllogin2">
+                    <li><a><span id="ctl00_ucheader_lit">{$Think.session.username}</span></a></li>
+                    <li> <a href="javascript:logout()" rel="nofollow">退出</a><em>|</em> </li>
+                    <li class="headed"><em class="icon shooping"></em><a target="black" rel="nofollow" href="cart.html">购物车</a><i>(0)</i></li>
+                </div>
+            </ul>
+            
+        </div>
+    </div>
+</div>
+<!--头部end-->
+<!--导航-->
+<div class="nav">
+      <div class="cmain"> 
+      <!--导航的左边--> 
+      <ul class="nav-ul fl"> 
+         <li><a href="{:url('index/index/index')}">首页</a> </li>
+         <li><a style="font-family:arial" href="{:url('index/product/womens')}">女装</a> </li> 
+         <li><a style="font-family:arial" href="{:url('index/product/mens')}">男装</a> </li>
+         <li><a style="font-family:arial" href="{:url('index/product/list')}">婚戒</a> </li> 
+         <li><a href="{:url('index/user/member_index')}">个人中心</a></li> 
+      </ul> 
+      <ul class="nav-right fr"> 
+        <li class="lipos"><em></em><a href="{:url('index/user/news_detail')}">最新活动</a> <i class="icon"></i></li> 
+      </ul> 
+     </div> 
+</div>
+<!--导航end-->
+
+
+
+<script type="text/javascript">
+    function logout() {
+        if (window.confirm('确定退出吗？')) {
+
+            $.get("/nAPI/QuitExit.ashx", function (data) {
+                window.location.href = "/";
+            });
+        }
+    }
+</script>
+<div class="member_cort">
+                <!--左边树-->
+                
+<div class="member_cort-left fl">
+    <!--我的DR-->
+    <div class="member_cortleft-tittle">
+                <i class="mb_home"></i><a rel="nofollow">我的世界</a>
+              </div>
+                <!--我的DR end-->
+                <ul class="member_cort-ul">
+                    <li id="ctl00_content_ucmemberleft_cart">
+                    <a rel="nofollow" href="{:url('index/user/member_index')}">我的世界</a></li>
+                    <li>
+                        <h3>-订单中心-</h3>
+                        <ul class="member_ul-dr">
+                            <li class="speacil_color" id="ctl00_content_ucmemberleft_order"><a rel="nofollow" href="{:url('index/user/member_order')}">我的订单</a></li>
+                            <li id="ctl00_content_ucmemberleft_cart"><a rel="nofollow" href="{:url('index/shopcar/cart')}" target="_blank">我的购物车</a></li>
+                            <li id="ctl00_content_ucmemberleft_collect"><a rel="nofollow" href="{:url('index/user/member_buy')}">未付款</a></li>
+                            <li id="ctl00_content_ucmemberleft_collect"><a rel="nofollow" href="{:url('index/user/state1')}">已付款</a></li>
+                            <li id="ctl00_content_ucmemberleft_collect"><a rel="nofollow" href="{:url('index/user/state2')}">待收货</a></li>
+                            <li id="ctl00_content_ucmemberleft_collect"><a rel="nofollow" href="{:url('index/user/state3')}">确认收货</a></li>
+                            <li id="ctl00_content_ucmemberleft_collect"><a rel="nofollow" href="{:url('index/user/member_collect')}">我的收藏</a></li>
+                        </ul>
+                    </li>
+                   <li>
+                        <h3>-魅莎服务-</h3>
+                        <ul class="member_ul-dr">
+                            <li id="ctl00_content_ucmemberleft_salAfter">
+                              <a rel="nofollow" href="{:url('index/user/member_car')}">婚车送喜</a>
+                            </li>
+                             <li id="ctl00_content_ucmemberleft_salAfter">
+                              <a rel="nofollow" href="{:url('index/user/member_place')}">婚庆场地</a>
+                            </li>
+                            <li id="ctl00_content_ucmemberleft_salAfter">
+                              <a rel="nofollow" href="{:url('index/user/member_sell')}">售后处理</a>
+                            </li>
+                        </ul>
+                    </li> 
+                    <li>
+                        <h3>
+                            -帐户管理-</h3>
+                        <ul class="member_ul-dr">
+                            <li id="ctl00_content_ucmemberleft_salAfter">
+                              <a rel="nofollow" href="{:url('index/user/member_bank')}">添加银行卡</a>
+                            </li>
+                            <li id="ctl00_content_ucmemberleft_myinfo"><a rel="nofollow" href="{:url('index/user/member_info')}">个人信息</a></li>
+                            <li id="ctl00_content_ucmemberleft_password"><a rel="nofollow" href="{:url('index/user/member_pwd')}">修改密码</a></li>
+                            <li id="ctl00_content_ucmemberleft_address"><a rel="nofollow" href="{:url('index/user/member_addr')}">收货地址</a></li>
+                            <li class="no_border" id="ctl00_content_ucmemberleft_news"><a rel="nofollow" href="{:url('index/user/news_detail')}">系统消息</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+                <!--左边树end-->
+                <!--右边的主要内容-->
+                <div class="member_cort-right fr">
+                    <!--找回密码-->
+                    <div class="member_password">
+                        <div class="member_ask-tittle">
+                            <h4>
+                                修改密码</h4>
+                            <p>
+                                为保障账户安全，建议避免使用与其他网站相同密码。</p>
+                        </div>
+                        <!--找回密码-->
+                        <div class="member_password-find">
+                            <div class="person-cort_left-write">
+                                <span>原始密码：</span>
+                                <input type="password" class="write_text" id="ctl00_content_pwd" name="ctl00$content$pwd">
+                                <a href="http://passport.darryring.comforget.html">忘记密码>></a>
+                            </div>
+                            <div style="float: left" class="person-cort_left-write person-cort_left-password">
+                                <span>新密码：</span>
+                                <input type="password" class="write_text" id="ctl00_content_pwd1" name="ctl00$content$pwd1">
+                                <em id="rou">弱</em> <em id="zhong">中</em> <em id="strong">强</em> 
+                               
+                            </div>
+                            <div style="display: none;" id="showr" class="person-cort_left-write">
+                                <i id="pwdwrong" class="writer_wrong pwd"></i><em class="pwd" id="txtshow"></em>
+                            </div>
+                            <div style="clear: both" class="person-cort_left-write">
+                                <span>确认新密码：</span>
+                                <input type="password" class="write_text" id="ctl00_content_pwd2" name="ctl00$content$pwd2">
+                                <i id="wrong" style="display: none" class="writer_wrong againpwd"></i><em style="display: none" class="againpwd" id="txtwrong"></em>
+                            </div>
+                            
+                        </div>
+                        <div style="margin-left: 90px">
+                                <input type="submit" style="border-style:None;" class="bt1 person-sp-button" id="btnsubmit" onClick="return check();" value="立即提交" name="ctl00$content$btnsubmit">
+                        </div>
+                        <!--找回密码end-->
+                    </div>
+                    <!--找回密码end-->
+                </div>
+                <!--右边的主要内容end-->
+            </div>
+            <!--中间内容end-->
+        </div>
+        <!--内容end-->
+    </div>
+    <!--中间end-->
+</div>
+<!--底部-->
+<div class="footer">
+    <div class="cmain">
+        <ul class="Service_ul">
+            <!--每一块li-->
+            <li>
+                <div class="Service_ul-img">
+                    <a href="index.html/help_ab/51.html" rel="nofollow"></a>
+                </div>
+                <a href="index.html/help_ab/51.html" rel="nofollow"><p>权威认证</p></a>
+            </li>
+            <!--每一块li-->
+            <li>
+                <div class="Service_ul-img bk_2">
+                    <a href="index.html/help_se/81.html" rel="nofollow"></a>
+                </div>
+                <a href="index.html/help_se/81.html" rel="nofollow"><p>
+                    一钻双证</p></a>
+            </li>
+            <!--每一块li-->
+            <li>
+                <div class="Service_ul-img bk_3">
+                    <a href="index.html/help_se/80.html" rel="nofollow"></a>
+                </div>
+                <a href="index.html/help_se/80.html" rel="nofollow"> <p>
+                    终生保养</p></a>
+            </li>
+            <!--每一块li-->
+            <li>
+                <div class="Service_ul-img bk_4">
+                    <a href="index.html/help_se/82.html" rel="nofollow"></a>
+                </div>
+                <a href="index.html/help_se/82.html" rel="nofollow"> <p>
+                    以小换大</p></a>
+            </li>
+            <!--每一块li-->
+            <li>
+                <div class="Service_ul-img bk_5">
+                    <a href="index.html/help_se/84.html" rel="nofollow"></a>
+                </div>
+                <a href="index.html/help_se/84.html" rel="nofollow"> <p>
+                    15天退换</p></a>
+            </li>
+            <!--每一块li-->
+            <li>
+                <div class="Service_ul-img bk_6">
+                    <a href="index.html/help/74.html" rel="nofollow"></a>
+                </div>
+                <a href="index.html/help/74.html" rel="nofollow"> <p>
+                    全国免运费</p></a>
+            </li>
+            <!--每一块li-->
+            <li>
+                <div class="Service_ul-img bk_7">
+                    <a href="index.html/help_se/83.html" rel="nofollow"></a>
+                </div>
+                   <a href="index.html/help_se/83.html" rel="nofollow"><p>
+                    全程保险</p></a>
+            </li>
+        </ul>
+        <!--服务条款-->
+        
+        <div class="service">
+            <!--二维码-->
+            <div class="erwei fl">
+                <img width="90" height="90" alt="Darry Ring 官方微信" src="__INDEX_PUB__images/erwei.jpg">
+            </div>
+            <!--中间的联系方式-->
+            <div class="know_right fl">
+                <p>
+                    24小时全国免费服务热线</p>
+                <img width="171" height="32" src="__INDEX_PUB__images/tel.jpg">
+                <p class="theshare">
+                    <span>关注我们：</span> 
+                    <a class="wb" target="_blank" href="http://weibo.com/13520comcn" rel="nofollow"></a>
+                    <a class="rr" target="_blank" href="http://e.t.qq.com/DarryRing" rel="nofollow"></a>
+                    <a class="qzone" target="_blank" title="QQ空间" href="http://user.qzone.qq.com/2678181289/" rel="nofollow"></a>
+                </p>
+            </div>
+       
+            <!--左边的服务条款-->
+            <ul class="Service_know fr">
+                <!--每一块li-->
+                <li>
+                    <h3>
+                        关于我们</h3>
+                    <p>
+                        <a target="_blank" href="index.html/help_ab/66.html" rel="nofollow">权威认证</a></p>
+                    <p>
+                        <a target="_blank" href="index.html/help_ab/68.html" rel="nofollow">商务合作</a></p>
+                    <p>
+                        <a target="_blank" href="index.html/help_ab/70.html" rel="nofollow">加入我们</a></p>
+                </li>
+                <!--每一块li-->
+                <li>
+                    <h3>
+                        关于购买</h3>
+                    <p>
+                        <a target="_blank" href="index.html/help/72.html" rel="nofollow">购买流程</a></p>
+                    <p>
+                        <a target="_blank" href="index.html/help/73.html" rel="nofollow">支付方式</a></p>
+                    <p>
+                        <a target="_blank" href="index.html/help/74.html" rel="nofollow">配送流程</a></p>
+                </li>
+                <!--每一块li-->
+                <li>
+                    <h3>
+                        关于退换</h3>
+                    <p>
+                        <a target="_blank" href="index.html/help/75.html" rel="nofollow">退货流程</a></p>
+                    <p>
+                        <a target="_blank" href="index.html/help/76.html" rel="nofollow">办理售后</a></p>
+                    <p>
+                        <a target="_blank" href="index.html/help_se/84.html" rel="nofollow">15天退换</a></p>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="model" id="model">
+    <div class="Prompt" id="Prompt">
+    </div>
+    <span id="log_uid" style="display:none"></span>
+    <span id="log_uname" style="display:none"></span>
+    <span id="log_orderid" style="display:none"></span>
+    <span id="log_price" style="display:none"></span>
+    
+</div>
+<!--返回顶部-->
+<div class="comeback"></div>
+<div style="display:none;" class="modelsever" id="modelsever">
+<div class="cs_top">
+<div class="cs_topcenter"><div style="width:300px; height:40px; line-height:40px; float:left; display:inline-block; ">顾客常见疑问</div> 
+<div style="width:385px; height:20px; float:left; text-align:right; padding-top:20px;">
+<img width="55" height="9" style="cursor: pointer;" onClick="CloseMaskser()" src="__INDEX_PUB__images/popup_window_btn_close.gif">
+</div>
+
+</div>
+</div>
+<div class="cs_content clear">
+<ul>
+<li onClick="showbox(1)" id="li1">官网店铺</li><li class="line">/</li>
+<li onClick="showbox(2)" id="li2">真爱疑问</li><li class="line">/</li>
+<li onClick="showbox(3)" id="li3">购买限制</li><li class="line">/</li>
+<li onClick="showbox(4)" id="li4">产品疑问</li><li class="line">/</li>
+<li onClick="showbox(5)" id="li5">关于定制</li><li class="line">/</li>
+<li onClick="showbox(6)" id="li6">关于运输</li><li class="line">/</li>
+<li onClick="showbox(7)" id="li7">关于售后</li>
+</ul>
+</div>
+
+</div>
+
+<script type="text/javascript">
+    function showbox(id) {
+        getQeestion(id);
+        for (var i = 1; i <= 8; i++) {
+            if (i == id) {
+                showdiv(id);
+            }
+            else {
+                hidediv(i);
+            }
+        } 
+    }
+    function contenttxt(id, sid) {
+        for (var i = 1; i <= 7; i++) {
+            if (i == id) {
+                showtxt(id, sid);
+            }
+            else {
+                hidetxt(i, sid);
+            }
+        }
+
+
+    }
+    function showtxt(id, sid) {
+        var objtitle = $("#content_title" + id + "_" + sid);
+
+        if (objtitle.css("display") == "none") {
+            objtitle.show("fast");
+        }
+        else {
+
+            hidetxt(id, sid);
+        }
+        //$("#"+id).show("fast");
+    }
+    function hidetxt(id, sid) {
+        var objtitle = $("#content_title" + id + "_" + sid);
+        objtitle.hide("fast");
+    }
+    function hidediv(id) {
+        $("#box" + id).hide("fast");
+
+        $("#li" + id).css({ "font-size": "14px", "color": "#7d7d7d" });
+    }
+
+    function showdiv(id) {
+        if ($("#box" + id).css("display") == "none") {
+            $("#box" + id).show("fast");
+            $("#li" + id).css({ "font-size": "18px", "color": "#000000" });
+        }
+
+    }
+
+</script>
+<script type="text/javascript">
+    function showMask() {
+        $("#masks").css("height", $(document).height());
+        $("#masks").css("width", $(document).width());
+        $("#masks").fadeIn();
+    }
+    function showModel(divName) {
+        showMask();
+       /* var top = ($(window).height() - $(divName).height()) / 5;
+        var left = ($(window).width() - $(divName).width()) / 2;
+        var scrollTop = $(document).scrollTop();
+        var scrollLeft = $(document).scrollLeft();*/
+        $(divName).fadeIn();
+    }
+    function CloseMaskser() {
+
+        $("#modelsever").fadeOut("slow");
+        $("#masks").fadeOut("slow");
+        $("#mask").fadeOut("slow");
+    }
+
+</script>
+
+
+
+</body></html>

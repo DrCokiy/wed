@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	
+	<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/css/style.css" />
+<script type="text/javascript" src="__ADMIN_PUB__lib/jquery/1.11.1/jquery.min.js"></script> 
+</head>
+<body>
+<div class="page-container">
+	<form >
+
+	
+		
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名：</label>
+			<div class=" col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$realname.realname}" placeholder="" disabled name="realname">
+				<input type="hidden" name="uid" value="{$realname.uid}">
+			</div>
+		</div>
+		<br>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">角色：</label>
+			<div class=" col-xs-8 col-sm-9"> <span class="select-box">
+				<select class="select" size="1" name="rid">
+					<option value="" selected>请选择角色</option>
+					{foreach $roles as $value}
+						<option value="{$value['rid']}">{$value['rname']}</option>
+					{/foreach}
+				</select>
+				</span> </div>
+		</div>
+		<br>
+		
+		<br>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				
+				<button class="btn btn-primary radius" id="doupdate" cancelable='false' >提交</button>
+			</div>
+		</div>
+
+
+
+	</form>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	$('#doupdate').click(function(e) {
+		e.preventDefault();
+		$.get('/admin/user/changerole',
+		 	{
+		 		uid:$('input[name="uid"]').val(),
+			 	rid:$('select[name="rid"]').val(),	}, 
+		 	 function(data){
+		 	 	if (1 == data) {
+		 	 		alert('更新成功');
+		 	 		// location.reload();
+		 	 		window.close();
+		 	 	} else {
+		 	 		alert('修改失败');
+		 	 		window.close();
+		 	 	}
+		 	 })
+	});
+</script>

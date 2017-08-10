@@ -1,0 +1,560 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<title></title> 
+<script src="https://qiyukf.com/script/01302de5b79e58b54ac2769292d11310.js" defer async></script>   
+<link href="__INDEX_PUB__css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+<link href="__INDEX_PUB__css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="__INDEX_PUB__css/snow.css" rel="stylesheet" type="text/css" media="all" />
+<link href="__INDEX_PUB__css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="__INDEX_PUB__css/mplayer.css">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<style type="text/css">
+        .info {
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+        .info h1 {
+            font-weight: 400;
+        }
+</style>
+</head>
+	<body>
+		<header>
+			<div class="container">
+				<nav class="navbar navbar-inverse">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<div class="logo">
+								<h1>
+								<div style="width: 200px;height: 50px;">
+									<a href="{:url('/index/index/index')}">
+								</div>
+								<div class="logo-img">
+								<img src="__INDEX_PUB__images/logo.jpg" alt="img09" style="display: block; width: 200px;height: 80px;margin-left: 150px;" />
+								</div>
+								</a>
+								</h1>
+							</div>	
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<nav class="cl-effect-13" id="cl-effect-13">
+								<ul class="nav navbar-nav">
+									<li class="active"><a href="{:url('index')}">首页</a></li>
+									<li>
+										<a href="{:url('index/image/gallery')}" target="new" class="dropdown-toggle" data-toggle="dropdown">婚礼相册 <b class="caret"></b></a>
+										<ul class="dropdown-menu agile_short_dropdown">
+											<li><a href="{:url('index/image/gallery')}" target="new" >时尚</a></li>
+											<li><a href="{:url('index/image/photo')}" target="new" >东方</a></li>
+											<li><a href="{:url('index/image/west')}" target="new" >西方</a></li>
+											<li><a href="{:url('index/image/video')}" target="new" >视频</a></li>
+										</ul>
+									</li>
+									<li><a href="gallery.html"></a>
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">婚礼套餐 <b class="caret"></b></a>
+										<ul class="dropdown-menu agile_short_dropdown">
+											<li><a href="{:url('index/product/lists')}" target="new" >一生有你</a></li>
+											<li><a href="{:url('index/product/show')}" target="new" >精选商品</a></li>
+											<li><a href="{:url('index/place/place')}" target="new" >婚庆场地</a></li>
+											<li><a href="{:url('index/car/car')}" target="new" >婚车送喜</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">个性展示 <b class="caret"></b></a>
+										<ul class="dropdown-menu agile_short_dropdown">
+										{if !empty($Think.session.uid)}
+											<li><a href="{:url('index/user/member_index')}" target="new" >个人中心</a></li>
+										{/if}
+											<li><a href="{:url('index/user/news_detail')}" target="new" >新闻信息</a></li>
+
+											<li><a href="">关于我们</a></li>
+
+										</ul>
+									</li>
+									{if empty($Think.session.username)}
+									<li><a href="{:url('index/user/login')}">登陆</a></li>
+									<li><a href="{:url('index/user/register')}" target="new" >注册</a></li>
+									{else}
+									<li><a href="{:url('index/user/out')}" target="new" >退出</a></li>
+									{/if}
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</nav> 
+			</div>
+		</header>
+		<!-- //header -->
+		<!-- banner-slider -->
+		<div class="w3ls_banner_section">
+			<div class="snow-container">
+			 	<div class="snow foreground"></div>
+			  	<div class="snow foreground layered"></div>
+			  	<div class="snow middleground"></div>
+			  	<div class="snow middleground layered"></div>
+			  	<div class="snow background"></div>
+			  	<div class="snow background layered"></div>
+			</div>
+			<div class="callbacks_container">
+				<ul class="rslides" id="slider3">
+					<li>
+						<div class="banner_agile-info">
+							<h3>We Make Your Dream True</h3>
+							<p>CREATIVE WEDDING PLANNER</p>
+							<div class="banner-mid-wthree"> <a href="index.html" class="hvr-buzz"> <img src="__INDEX_PUB__images/couple.png" alt="wp"/></a> </div>
+						</div>
+					</li>
+					<li>
+						<div class="banner_agile-info">
+							<h3>We are Getting Married</h3>
+							<p>CREATIVE WEDDING PLANNER</p>
+							 <div class="banner-mid-wthree"> <a href="index.html" class="hvr-buzz"> <img src="__INDEX_PUB__images/couple.png" alt="wp"/></a> </div>
+						</div>
+					</li>
+					<li>
+						<div class="banner_agile-info">
+							<h3>We Make Your Dream True</h3>
+							<p>CREATIVE WEDDING PLANNER</p>
+							<div class="banner-mid-wthree"> <a href="index.html" class="hvr-buzz"> <img src="__INDEX_PUB__images/couple.png" alt="wp"/></a> </div>
+						 </div>
+					</li>
+				</ul>	
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	<!--/story-->
+		<div class="about_section">
+			<div class="container">
+			   	<div class="wthree_title_agile">
+			        <h2>Our <span>Story</span></h2>
+					<p><i class="fa fa-heart-o" aria-hidden="true"></i></p>
+				</div>
+				<p class="sub_para">WE ARE GETTING MARRIED</p>
+				<div class="inner_w3l_agile_grids">
+					<!-- Bottom to top-->
+					<div class="col-md-6 team-grid">
+						<!-- normal -->
+						<div class="ih-item circle effect10 bottom_to_top">
+							<a href="{:url('index/product/show')}" target="_black">
+								<div class="img">
+										<img src="__INDEX_PUB__images/a1.jpg" alt="img" />
+								</div>
+							</a>
+							<div class="info">
+								<h3><a href="{:url('index/product/show')}" target="_black">John Leo</a></h3>
+							</div>
+						</div>
+						<!-- end normal -->
+						 <h4><a href="{:url('index/product/show')}" target="_black">Groom</a></h4>
+						 <p>你是我从不相信的未来，但我只相信你！</p>
+						
+					</div>
+					<div class="col-md-6 team-grid">
+						<!-- normal -->
+						<div class="ih-item circle effect10 bottom_to_top">
+							<a href="{:url('index/product/show')}" target="_black">
+								<div class="img">
+									<img src="__INDEX_PUB__images/a2.jpg" alt="img" />
+								</div>
+							</a>
+							<div class="info">
+								<h3><a href="{:url('index/product/show')}" target="_black">Rosee Smith</a></h3>
+							</div>
+						</div>
+						<!-- end normal -->
+						 <h4><a href="{:url('index/product/show')}" target="_black">Bride</a></h4>
+						  <p>我的日记里只有你，我想做的所有事都与你有关</p>
+						  <p>秒杀</p>
+						
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+	    </div>
+		<!--//story-->
+		<!--/counter-->	
+	<!-- /property-grids -->
+		<div class="property-grids">
+		    <div class="agile-homes-w3l  grid">
+	            <div class="col-md-6 home-agile-left">
+				   <figure class="effect-moses">
+						<img src="__INDEX_PUB__images/3.png" alt="" style="height: 500px;" />
+						<figcaption>
+							<h4> <a href="{:url('index/place/place')}" target="new"  style="text-decoration:none;color:white;">
+							Wedding Hotels</a></h4>
+							<p> <a href="{:url('index/place/place')}" target="new"  style="text-decoration:none;color:white;">浪漫只想与你诉说</a></p>
+						</figcaption>			
+					</figure>
+				</div>
+				<div class="col-md-6 home-agile-text">
+				   <h4><a href="{:url('index/place/place')}" target="new"  style="text-decoration:none;color:white;">We got married
+				   </a></h4>
+				   <p><a href="{:url('index/place/place')}" target="new"  style="text-decoration:none;color:white;">自从遇见，其他的人都是多余，今后的每一分每一秒都想与你度过，我做的每一件事都有你，爱你这件事，不需要解释，不需要理由，只是因爱的那个人是你.</a></p>
+				    <div class="date">
+					   <h5><i class="fa fa-calendar" aria-hidden="true"></i> March 20 2017</h5>
+					   <h5 style="width: 300px;"><i class="fa fa-clock-o" aria-hidden="true"></i> 10.00am to 12.00pm</h5>
+				   	</div>
+						<div class="icon_wthree"><img src="__INDEX_PUB__images/ring.png" alt="" /></div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="col-md-6 home-agile-text">
+				   <h4><a href="{:url('index/car/car')}" target="new"  style="text-decoration:none;color:white;">Love you, I'm serious</a></h4>
+				   <a href="{:url('index/car/car')}" target="new"  style="text-decoration:none;color:white;">
+				  	<p>我每天都在想你，我把你当做我这一生要去守护的人，两个人在一起本来就是不公平的，我愿意做那个付出承担多的那个人，我不怕前方道路布满荆棘，只要你愿意相信我，我会为你踏出一条康庄大道。</p>
+				   </a>
+				   <div class="date">
+					   <h5><i class="fa fa-calendar" aria-hidden="true"></i> March 20 2017</h5>
+					   <h5 style="width: 300px;"><i class="fa fa-clock-o" aria-hidden="true"></i> 12.00pm to 2.00pm</h5>
+				   </div>
+				   <div class="icon_wthree"><i class="fa fa-cutlery" aria-hidden="true"></i></div>
+				</div>
+				<div class="col-md-6 home-agile-left">
+					<figure class="effect-moses">
+						<img src="__INDEX_PUB__images/4.png" alt="" style="height: 500px;"/>
+						<figcaption>
+							<h4><a href="{:url('index/car/car')}" target="new"  style="text-decoration:none;color:white;">Overseas Wedding</a></h4>
+							<p><a href="{:url('index/car/car')}" target="new"  style="text-decoration:none;color:white;">一站式婚礼</a></p>
+						</figcaption>			
+					</figure>
+				</div>
+				<div class="clearfix"></div>
+		    </div>
+		</div>
+	
+	<!--//counter-->
+		<div class="banner-bottom">
+			<div class="wthree_title_agile">
+		        <h3>Host <span>News</span></h3>
+				<p><i class="fa fa-heart-o" aria-hidden="true"></i></p>
+			</div>
+			<p class="sub_para">Let Is Get Married!</p>
+			<div class="inner_w3l_agile_grids">
+				<div class="sreen-gallery-cursual">
+			       	<div id="owl-demo" class="owl-carousel">
+				      	<div class="item-owl">
+	                		<div class="test-review">
+		                	  <img src="__INDEX_PUB__images/s1.jpg" class="img-responsive" alt=""/>
+							  <h5>Groom</h5>
+	                	    </div>
+		                </div>
+		                <div class="item-owl">
+		                	<div class="test-review">
+			                	<img src="__INDEX_PUB__images/s2.jpg" class="img-responsive" alt=""/>
+								<h5>Bride</h5>
+		                	</div>
+		                </div>
+		                <div class="item-owl">
+		                	<div class="test-review">
+			                	<img src="__INDEX_PUB__images/s3.jpg" class="img-responsive" alt=""/>
+								<h5>Groom</h5>
+		                	</div>
+		                </div>
+						<div class="item-owl">
+		                	<div class="test-review">
+			                	<img src="__INDEX_PUB__images/s4.jpg" class="img-responsive" alt=""/>
+								<h5>Bride</h5>
+		                	</div>
+		                </div>
+						<div class="item-owl">
+		                	<div class="test-review">
+			                	<img src="__INDEX_PUB__images/s1.jpg" class="img-responsive" alt=""/>
+								<h5>Groom</h5>
+		                	</div>
+		                </div>
+		                <div class="item-owl">
+		                	<div class="test-review">
+			                	<img src="__INDEX_PUB__images/s5.jpg" class="img-responsive" alt=""/>
+								<h5>Bride</h5>
+		                	</div>
+		                </div>
+						<div class="item-owl">
+		                	<div class="test-review">
+			                	<img src="__INDEX_PUB__images/s3.jpg" class="img-responsive" alt=""/>
+								<h5>Groom</h5>
+		                	</div>
+		                </div>
+		                <div class="item-owl">
+		                	<div class="test-review">
+			                	<img src="__INDEX_PUB__images/s4.jpg" class="img-responsive" alt=""/>
+								<h5>Bride</h5>
+		                	</div>
+		                </div>
+		                <div class="item-owl">
+		                	<div class="test-review">
+			                	<img src="__INDEX_PUB__images/s1.jpg" class="img-responsive" alt=""/>
+								<h5>Groom</h5>
+		                	</div>
+		                </div>
+						<div class="item-owl">
+		                	<div class="test-review">
+			                	<img src="__INDEX_PUB__images/s2.jpg" class="img-responsive" alt=""/>
+								<h5>Bride</h5>
+		                	</div>
+		                </div>
+						<div class="item-owl">
+		                	<div class="test-review">
+			                	<img src="__INDEX_PUB__images/s3.jpg" class="img-responsive" alt=""/>
+								<h5>Groom</h5>
+		                	</div>
+		                </div>
+						<div class="item-owl">
+		                	<div class="test-review">
+			                	<img src="__INDEX_PUB__images/s5.jpg" class="img-responsive" alt=""/>
+								<h5>Bride</h5>
+		                	</div>
+		                </div>
+	              	</div>
+				</div>
+			</div>
+	 	</div>
+	<!--/bottom-->
+		<div class="agileinfo_bottom_section">
+			<div class="snow-container two">
+				<div class="snow foreground"></div>
+				<div class="snow foreground layered"></div>
+				<div class="snow middleground"></div>
+				<div class="snow middleground layered"></div>
+				<div class="snow background"></div>
+				<div class="snow background layered"></div>
+			</div>
+			<div class="agile-w3l-sec">
+	            <h3>The best gift will be your participation, thanks to all</h3>
+				<p>Jasmin <span>&</span> Kyle Lee</p>
+				<div class="banner-mid-wthree"> 
+					<a href="index.html" target="new"  class="hvr-buzz"> 
+						<i class="fa fa-heart-o" aria-hidden="true"></i>
+					</a> 
+				</div>
+			</div>
+		</div>
+	 
+	<!--//bottom-->
+	<!-- footer -->
+		<div class="agile-footer">
+			<div class="container">
+				<div class="aglie-info-logo">
+				
+					<div class="banner-mid-wthree"> <a href="index.html" class="hvr-buzz"> <img src="__INDEX_PUB__images/couple.png" alt="wp"/></a> </div>
+				</div>
+				<ul class="aglieits-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="gallery.html">Wedding Albums</a></li>
+					<li><a href="icons.html">Icons</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+				<div class="w3_agileits_social_media">
+					<ul>
+						
+						<li><a href="#" class="wthree_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="wthree_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="wthree_dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="wthree_behance"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<div class="copy-right">
+					<p>© 2017 Wedding Proposer. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="mp" style="z-index:10000000">
+		    <div class="mp-box">
+		        <img src="static/index/img/mplayer_error.png" alt="music cover" class="mp-cover">
+		        <div class="mp-info">
+		            <p class="mp-name">燕归巢</p>
+		            <p class="mp-singer">许嵩</p>
+		            <p><span class="mp-time-current">00:00</span>/<span class="mp-time-all">00:00</span></p>
+		        </div>
+		        <div class="mp-btn">
+		            <button class="mp-prev" title="上一首"></button>
+		            <button class="mp-pause" title="播放"></button>
+		            <button class="mp-next" title="下一首"></button>
+		            <button class="mp-mode" title="播放模式"></button>
+		            <div class="mp-vol">
+		                <button class="mp-vol-img" title="静音"></button>
+		                <div class="mp-vol-range" data-range_min="0" data-range_max="100" data-cur_min="80">
+		                    <div class="mp-vol-current"></div>
+		                    <div class="mp-vol-circle"></div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="mp-pro">
+		            <div class="mp-pro-current"></div>
+		        </div>
+		        <div class="mp-menu">
+		            <button class="mp-list-toggle"></button>
+		            <button class="mp-lrc-toggle"></button>
+		        </div>
+		    </div>
+		    <button class="mp-toggle">
+		        <span class="mp-toggle-img"></span>
+		    </button>
+		    <div class="mp-lrc-box">
+		        <ul class="mp-lrc"></ul>
+		    </div>
+		    <button class="mp-lrc-close"></button>
+		    <div class="mp-list-box">
+		        <ul class="mp-list-title"></ul>
+		        <table class="mp-list-table">
+		            <thead>
+		                <tr>
+		                    <th>歌名</th>
+		                    <th>歌手</th>
+		                    <th>时长</th>
+		                </tr>
+		            </thead>
+		            <tbody class="mp-list"></tbody>
+		        </table>
+		    </div>
+		</div>
+		<script type="text/javascript" src="__INDEX_PUB__js/jquery-2.1.4.min.js"></script>
+		<script src="__INDEX_PUB__js/bootstrap.min.js"></script>
+		<script src="__INDEX_PUB__js/responsiveslides.min.js"></script>
+		<script src="__INDEX_PUB__js/mplayer.js"></script>
+		<script src="__INDEX_PUB__js/mplayer-list.js"></script>
+		<script src="__INDEX_PUB__js/mplayer-functions.js"></script>
+		<script type="text/javascript" src="__INDEX_PUB__js/jquery.nstSlider.js"></script>
+
+		<script type="text/javascript">
+var modeText = ['顺序播放','单曲循环','随机播放','列表循环'];
+var player = new MPlayer({
+    // 容器选择器名称
+    containerSelector: '.mp',
+    // 播放列表
+    songList: mplayer_song,
+    // 专辑图片错误时显示的图片
+    defaultImg: '/static/index/img/mplayer_error.png',
+    // 自动播放
+    autoPlay: true,
+    // 播放模式(0->顺序播放,1->单曲循环,2->随机播放,3->列表循环(默认))
+    playMode:0,
+    playList:0,
+    playSong:0,
+    // 当前歌词距离顶部的距离
+    lrcTopPos: 34,
+    // 列表模板，用${变量名}$插入模板变量
+    listFormat: '<tr><td>${name}$</td><td>${singer}$</td><td>${time}$</td></tr>',
+    // 音量滑块改变事件名称
+    volSlideEventName:'change',
+    // 初始音量
+    defaultVolume:80
+}, function () {
+    // 绑定事件
+    this.on('afterInit', function () {
+        console.log('播放器初始化完成，正在准备播放');
+    }).on('beforePlay', function () {
+        var $this = this;
+        var song = $this.getCurrentSong(true);
+        var songName = song.name + ' - ' + song.singer;
+        console.log('即将播放'+songName+'，return false;可以取消播放');
+    }).on('timeUpdate', function () {
+        var $this = this;
+        console.log('当前歌词：' + $this.getLrc());
+    }).on('end', function () {
+        var $this = this;
+        var song = $this.getCurrentSong(true);
+        var songName = song.name + ' - ' + song.singer;
+        console.log(songName+'播放完毕，return false;可以取消播放下一曲');
+    }).on('mute', function () {
+        var status = this.getIsMuted() ? '已静音' : '未静音';
+        console.log('当前静音状态：' + status);
+    }).on('changeMode', function () {
+        var $this = this;
+        var mode = modeText[$this.getPlayMode()];
+        $this.dom.container.find('.mp-mode').attr('title',mode);
+        console.log('播放模式已切换为：' + mode);
+    });
+});
+
+
+$(document.body).append(player.audio); // 测试用
+
+setEffects(player);
+
+
+</script>
+		<script>
+			$(function () {
+			  $("#slider3").responsiveSlides({
+				auto: true,
+				pager:true,
+				nav:false,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+				  $('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+				  $('.events').append("<li>after event fired.</li>");
+				}
+			  });
+		
+			});
+		 </script>
+		<script src="__INDEX_PUB__js/simplyCountdown.js"></script>
+		<script>
+			var d = new Date(new Date().getTime() + 948 * 120 * 120 * 2000);
+
+			// default example
+			simplyCountdown('.simply-countdown-one', {
+				year: d.getFullYear(),
+				month: d.getMonth() + 1,
+				day: d.getDate()
+			});
+
+			// inline example
+			simplyCountdown('.simply-countdown-inline', {
+				year: d.getFullYear(),
+				month: d.getMonth() + 1,
+				day: d.getDate(),
+				inline: true
+			});
+
+			//jQuery example
+			$('#simply-countdown-losange').simplyCountdown({
+				year: d.getFullYear(),
+				month: d.getMonth() + 1,
+				day: d.getDate(),
+				enableUtc: false
+			});
+		</script>
+		<link href="__INDEX_PUB__css/owl.carousel.css" rel="stylesheet">
+	    <script src="__INDEX_PUB__js/owl.carousel.js"></script>
+	        <script>
+	    $(document).ready(function() {
+	      $("#owl-demo").owlCarousel({
+	        items :5,
+			itemsDesktop : [768,4],
+			itemsDesktopSmall : [414,3],
+	        lazyLoad : true,
+	        autoPlay : true,
+	        navigation :true,
+			
+	        navigationText :  false,
+	        pagination : true,
+			
+	      });
+		  
+	    });
+	    </script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+								
+				$().UItoTop({ easingType: 'easeOutQuart' });
+									
+				});
+		</script>
+		<!-- start-smoth-scrolling -->
+		<script type="text/javascript" src="__INDEX_PUB__js/move-top.js"></script>
+		<script type="text/javascript" src="__INDEX_PUB__js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+	</body>
+</html>

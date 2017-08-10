@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zxx"> 
+<!-- Head -->
+<head>
+
+<title>Women's</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link rel="stylesheet" href="__INDEX_PUB__css/bootstrap1.css"	type="text/css" media="all">
+<link rel="stylesheet" href="__INDEX_PUB__css/style1.css" type="text/css" media="all">
+<link rel="stylesheet" href="__INDEX_PUB__css/fluid_dg.css" id="fluid_dg-css" type="text/css" media="all">
+<link rel="stylesheet" href="__INDEX_PUB__css/font-awesome1.css" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui/bootstrap/css/bootstrap.min.css" />
+<!-- <script src="__INDEX_PUB__js/modernizr-2.6.2-respond-1.1.0.min.js"></script> -->
+<!-- <script src="__INDEX_PUB__js/jquery-2.2.3.js"></script> -->
+</head>
+<!-- //Head -->
+<body >
+<!-- Header -->
+	<div class="agileheader" id="agileheadermens">
+
+		<!-- Navigation -->
+		<nav class="navbar navbar-default w3ls navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header wthree nav_2">
+					<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand agileinfo" href="index.html"><span>GROOVY</span> APPAREL</a>
+					<ul class="w3header-cart">
+						<li class="wthreecartaits"><span class="my-cart-icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i><span class="badge badge-notify my-cart-badge"></span></span></li>
+					</ul>
+				</div>
+				<div id="bs-megadropdown-tabs" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="{:url('index/index/index')}" class="dropdown-toggle w3-agile hyper" ><span> 首页 </span></a>
+						</li>
+
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown"><span> 女装 </span></a>
+							<ul class="dropdown-menu multi multi2">
+								<div class="row" id="womenbaba">
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-womens-nav-agileits w3layouts-womens-nav-agileits-1" id="womencontainer">
+										<ul class="multi-column-dropdown">
+											<li class="heading"><a href="">女装</a></li>
+											{foreach $womenbrands as $value}
+											<li><a href="/index/product/womens?brand={$value.brandid}" class="womenbrand"><i class="fa fa-angle-right" aria-hidden="true"></i>{$value['brandname']}</a></li>
+											{/foreach}
+										</ul>
+									</div>
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-womens-nav-agileits w3layouts-womens-nav-agileits-2">
+										<p>A字型婚纱></p>
+										<a href="{:url('index/product/womens')}">
+											<img src="__INDEX_PUB__images/women-nav-1.jpg" alt="Groovy Apparel">
+										</a>
+									</div>
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-womens-nav-agileits w3layouts-womens-nav-agileits-3">
+										<p>蓬裙婚纱</p>
+										<a href="{:url('index/product/womens')}">
+											<img src="__INDEX_PUB__images/women-nav-2.jpg" alt="Groovy Apparel">
+										</a>
+									</div>
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-womens-nav-agileits w3layouts-womens-nav-agileits-4">
+										<p>迷你婚纱</p>
+										<a href="{:url('index/product/womens')}">
+											<img src="__INDEX_PUB__images/women-nav-3.jpg" alt="Groovy Apparel">
+										</a>
+									</div>
+
+									<div class="clearfix"></div>
+									<p class="promo"></p>
+								</div>
+
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a href="/index/product/mens" class="dropdown-toggle hyper" data-toggle="dropdown"><span> 男装 </span></a>
+							<ul class="dropdown-menu multi multi3" style="margin-left:  60px;">
+								<div class="row" id="menbaba">
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-acc-nav-agileits w3layouts-acc-nav-agileits-1"  style="margin-left: 30px;" id="mencontainer"> 
+										<ul class="multi-column-dropdown">
+											<li class="heading"><a href="/index/product/mens">男装</a></li>
+											{foreach $menbrands as $value}
+											<li><a href="/index/product/mens?brand={$value['brandid']}" class="menbrand"><i class="fa fa-angle-right" aria-hidden="true"></i>{$value['brandname']}</a></li>
+											{/foreach}
+										</ul>
+									</div>
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-acc-nav-agileits w3layouts-acc-nav-agileits-2">
+										<p>休闲</p>
+										<a href="{:url('index/product/mens')}"><img src="__INDEX_PUB__images/other-nav-1.jpg" alt="Groovy Apparel"></a>
+									</div>
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-acc-nav-agileits w3layouts-acc-nav-agileits-3">
+										<p>西服</p>
+										<a href="{:url('index/product/mens')}"><img src="__INDEX_PUB__images/other-nav-2.jpg" alt="Groovy Apparel"></a>
+									</div>
+
+									<div class="clearfix"></div>
+									<p class="promo">Use Promo Code <span>#CFFGTY56</span> and take 30% off the products. <a href="#">Details</a></p>
+								</div>
+
+							</ul>
+						</li>
+						<li  class="dropdown">
+							<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown">
+								<span>婚戒 </span>
+							</a>
+							<ul class="dropdown-menu multi multi4" style="margin-left:  160px;">
+								<div class="row">
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-hot-nav-agileits w3layouts-hot-nav-agileits-1" style="margin-left: 60px;">
+										<ul class="multi-column-dropdown">
+											<li class="heading">品牌</li>
+											<li><a href="{:url('index/product/lists')}"><i class="fa fa-angle-right" aria-hidden="true"></i>DR</a></li>
+											
+										</ul>
+									</div>
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-hot-nav-agileits w3layouts-hot-nav-agileits-2">
+										<p>指尖萦绕</p>
+										<a href="{:url('index/product/lists')}"><img src="__INDEX_PUB__images/02wj.jpg" alt="Groovy Apparel"></a>
+									</div>
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-hot-nav-agileits w3layouts-hot-nav-agileits-3">
+										<p>爱在你我</p>
+										<a href="{:url('index/product/lists')}"><img src="__INDEX_PUB__images/03wj.jpg" alt="Groovy Apparel"></a>
+									</div>
+									<div class="clearfix"></div>
+									<p class="promo">Use Promo Code <span>#CFFGTY56</span> and take 30% off the products. <a href="#">Details</a></p>
+								</div>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown"><span>婚礼服务 </span></a>
+							<ul class="dropdown-menu multi multi4">
+								<div class="row">
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-hot-nav-agileits w3layouts-hot-nav-agileits-1" style="margin-left: 60px;">
+										<ul class="multi-column-dropdown">
+											<li class="heading">婚礼服务</li>
+											<li><a href="{:url('index/car/car')}"><i class="fa fa-angle-right" aria-hidden="true"></i>婚车送福</a></li>
+											<li><a href="{:url('index/place/place')}"><i class="fa fa-angle-right" aria-hidden="true"></i>婚庆场地</a></li>
+											<li><a href="{:url('index/user/member_index')}"><i class="fa fa-angle-right" aria-hidden="true"></i>个人中心</a></li>
+										</ul>
+									</div>
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-hot-nav-agileits w3layouts-hot-nav-agileits-2">
+										<p>婚车</p>
+										<a href="mens.html"><img src="__INDEX_PUB__images/other-nav-1.jpg" alt="Groovy Apparel"></a>
+									</div>
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-hot-nav-agileits w3layouts-hot-nav-agileits-3">
+										<p>场地</p>
+										<a href="womens.html"><img src="__INDEX_PUB__images/other-nav-2.jpg" alt="Groovy Apparel"></a>
+									</div>
+									<div class="clearfix"></div>
+									<p class="promo">Use Promo Code <span>#CFFGTY56</span> and take 30% off the products. <a href="#">Details</a></p>
+								</div>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown"><span>婚礼服务 </span></a>
+							<ul class="dropdown-menu multi multi4">
+								<div class="row">
+
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-hot-nav-agileits w3layouts-hot-nav-agileits-1" style="margin-left: 60px;">
+										<ul class="multi-column-dropdown">
+											<li class="heading">婚礼服务</li>
+											<li><a href="{:url('index/car/car')}"><i class="fa fa-angle-right" aria-hidden="true"></i>婚车送福</a></li>
+											<li><a href="{:url('index/place/place')}"><i class="fa fa-angle-right" aria-hidden="true"></i>婚庆场地</a></li>
+											<li><a href="{:url('index/user/member_index')}"><i class="fa fa-angle-right" aria-hidden="true"></i>个人中心</a></li>
+										</ul>
+									</div>
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-hot-nav-agileits w3layouts-hot-nav-agileits-2">
+										<p>婚车</p>
+										<a href="mens.html"><img src="__INDEX_PUB__images/other-nav-1.jpg" alt="Groovy Apparel"></a>
+									</div>
+									<div class="col-sm-3 w3layouts-nav-agile w3layouts-hot-nav-agileits w3layouts-hot-nav-agileits-3">
+										<p>场地</p>
+										<a href="womens.html"><img src="__INDEX_PUB__images/other-nav-2.jpg" alt="Groovy Apparel"></a>
+									</div>
+									<div class="clearfix"></div>
+									<p class="promo">Use Promo Code <span>#CFFGTY56</span> and take 30% off the products. <a href="#">Details</a></p>
+								</div>
+							</ul>
+						</li>
+						<li class="wthreesearch dropdown" style="margin-left: 10px;">
+							<form action="#" method="post">
+								<input type="search" name="Search" placeholder="Search for a Product" required="">
+								<button type="submit" class="btn btn-default search" aria-label="Left Align">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</button>
+							</form>
+						</li>
+						{if !empty($Think.session.username)}
+						<li class="wthreecartaits wthreecartaits2 cart cart box_1" > 
+							<a href="{:url('index/shopcar/cart')}">	<i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
+						</li>
+						{else}
+						<li class=" wthreecartaits2 cart cart box_1">
+							<ul style="width: 100px;height: 50px; display: block;margin-top:10px;font-size: 15px;">
+								<a href="{:url('index/user/login')}">	登陆</a>
+								<a href="{:url('index/user/register')}">注册</a>
+							</ul> 
+						</li>
+						{/if}
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- //Navigation -->
+		<!-- Header-Top-Bar-(Hidden) -->
+		<div class="agileheader-topbar">
+			
+				<!-- Popup-Box -->
+				<div id="popup">
+					<div id="small-dialog1" class="mfp-hide agileinfo">
+						<div class="pop_up">
+							<form action="#" method="post">
+								<h3>LOGIN</h3>
+								<input type="text" Name="Userame" placeholder="Username" required="">
+								<input type="password" Name="Password" placeholder="Password" required="">
+								<ul class="tick w3layouts agileinfo">
+									<li>
+										<input type="checkbox" id="brand1" value="">
+										<label for="brand1"><span></span>Remember me</label>
+									</li>
+									<li>
+										<a href="#">Forgot Password?</a>
+									</li>
+								</ul>
+								<div class="send-button wthree agileits">
+									<input type="submit" value="LOGIN">
+								</div>
+							</form>
+						</div>
+					</div>
+					<div id="small-dialog2" class="mfp-hide agileinfo">
+						<div class="pop_up">
+							<form action="#" method="post">
+								<h3>SIGN UP</h3>
+								<input type="text" Name="Name" placeholder="Name" required="">
+								<input type="text" Name="Email" placeholder="Email" required="">
+								<input type="password" Name="Password" placeholder="Password" required="">
+								<input type="text" Name="Phone Number" placeholder="Phone Number" required="">
+								<div class="send-button wthree agileits">
+									<input type="submit" value="SIGN UP">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+		</div>
+		<!-- //Header-Top-Bar-(Hidden) -->
+		<!-- Banner -->
+		<div class="agileheader-banner">
+			<img src="__INDEX_PUB__images/womens-banner.jpg" alt="Groovy Apparel">
+		</div>
+		<!-- //Banner -->
+	</div>
+	<!-- //Header -->
+	<!-- Heading -->
+	<h1 class="w3wthreeheadingaits">WOMEN'S CLOTHING</h1>
+	<!-- //Heading -->
+	<!-- Women's-Product-Display -->
+	<div class="wthreeproductdisplay">
+		<div id="cbp-pgcontainer" class="cbp-pgcontainer">
+			<ul class="cbp-pggrid">
+			{foreach $res as $val}
+				<li class="wthree aits w3l">
+					<div class="cbp-pgcontent" id="women-1">
+					{if $val['is_miao'] == 1}
+						<div class="cbp-pgrotate"><img src="__INDEX_PUB__images/ms.jpg" style="width: 30px;height: 30px;">
+						</div>
+					{/if}
+						<a href="{:url('index/product/womens_single',['gid'=>$val['gid']])}">
+							<div class="cbp-pgitem a3ls">
+								<div class="cbp-pgitem-flip">
+									<img src="{$val['src']}" alt="Groovy Apparel" style="width: 500px;
+									height:700px">
+								</div>
+							</div>
+						</a>
+						<ul class="cbp-pgoptions w3l">
+							<li class="cbp-pgoptcompare">
+								<!-- <input type="checkbox" name="checkboxG31" id="checkboxG31" class="css-checkbox w3"><label for="checkboxG31" class="css-label"></label>  -->
+								<div class="w3l-cart pw3l-cart" >
+									<input type="hidden" name="ad" value="{$val['gid']}">
+									<img src="__INDEX_PUB__images/sc.png"  style="width:35px;height: 35px;"  class="cc">
+								</div>
+							</li>
+							<li class="cbp-pgoptfav">
+								<span> <i class="fa fa-star" aria-hidden="true" id="color">{$val['colorstr']}</i></span>
+							</li>
+							<li class="cbp-pgoptsize agile">
+								<span data-size="XL" id="size">{$val['sizenum']}</span>
+							</li>
+							<li class="cbp-pgoptcart">
+									<!-- <button type="submit" class="w3l-cart pw3l-cart" id="add"> 
+										<i class="fa fa-cart-plus" aria-hidden="true" ></i>
+									</button> -->
+									<div class="w3l-cart pw3l-cart" >
+										<input type="hidden" name="ad" value="{$val['gid']}">
+										<img src="__INDEX_PUB__images/car.jpg"  style="width:35px;height: 35px;margin-top: 15px;margin-left: 40px;"  class="aa">
+									</div>
+								</form>
+							</li>
+						</ul>
+					</div>
+					<a href="{:url('index/product/womens_single',['gid'=>$val['gid']])}">
+						<div class="cbp-pginfo w3layouts">
+							<h3>Detail</h3>
+							<span class="cbp-pgprice" id="price" style="margin-left: -15px;color:#DA2525;">{$val['price']}
+							</span>
+						</div>
+					</a>
+				</li>
+				{/foreach}	
+			</ul>
+		</div>
+		<div class="pagination" style="float: right;margin-top: -15px;">{$res->render()}</div>
+	</div>
+
+	<!-- Footer -->
+	<div class="agileinfofooter">
+		<div class="agileinfofooter-grids">
+
+			<div class="col-md-4 agileinfofooter-grid agileinfofooter-grid1">
+				<ul>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="mens.html">MEN'S</a></li>
+					<li><a href="mens_accessories.html">MEN'S ACCESSORIES</a></li>
+					<li><a href="womens.html">WOMEN'S</a></li>
+					<li><a href="womens_accessories.html">WOMEN'S ACCESSORIES</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-4 agileinfofooter-grid agileinfofooter-grid2">
+				<ul>
+					<li><a href="stores.html">STORE LOCATOR</a></li>
+					<li><a href="faq.html">FAQs</a></li>
+					<li><a href="codes.html">CODES</a></li>
+					<li><a href="icons.html">ICONS</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-4 agileinfofooter-grid agileinfofooter-grid3">
+				<address>
+					<ul>
+						<li>40019 Parma Via Modena</li>
+						<li>Sant'Agata Bolognese</li>
+						<li>BO, Italy</li>
+						<li>+1 (734) 123-4567</li>
+						<li><a class="mail" href="mailto:mail@example.com">info@example.com</a></li>
+					</ul>
+				</address>
+			</div>
+			<div class="clearfix"></div>
+
+		</div>
+	</div>
+	<!-- //Footer -->
+
+
+
+	<!-- Copyright -->
+	<div class="w3lscopyrightaits">
+		<div class="col-md-8 w3lscopyrightaitsgrid w3lscopyrightaitsgrid1">
+			<p>Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://www.17sucai.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+		</div>
+		<div class="col-md-4 w3lscopyrightaitsgrid w3lscopyrightaitsgrid2">
+			<div class="agilesocialwthree">
+				<ul class="social-icons">
+					<li><a href="#" class="facebook w3ls" title="Go to Our Facebook Page"><i class="fa w3ls fa-facebook-square" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="twitter w3l" title="Go to Our Twitter Account"><i class="fa w3l fa-twitter-square" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="googleplus w3" title="Go to Our Google Plus Account"><i class="fa w3 fa-google-plus-square" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="instagram wthree" title="Go to Our Instagram Account"><i class="fa wthree fa-instagram" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="youtube w3layouts" title="Go to Our Youtube Channel"><i class="fa w3layouts fa-youtube-square" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+<script src="__INDEX_PUB__js/jquery-2.2.3.js"></script>
+<script src="__INDEX_PUB__js/modernizr.custom.js"></script>
+<!-- 展现购物车 -->
+<!-- <script src="__INDEX_PUB__js/minicart.js"></script>   -->
+<script>
+
+$('.womenbrand').mouseover(function(e) {
+	e.preventDefault();
+	var tiao = $(this).prop('href');
+	var weizhi = tiao.lastIndexOf('=');
+	var brand = tiao.substr(weizhi+1);
+	
+	$.get('/index/product/getBrandClassAndGoods?brand='+brand,
+		function(data) {
+			data = eval('(' + data + ')');
+
+			$('#womencontainer').siblings().remove();
+			$('#womenbaba').append('<div class="col-sm-3 w3layouts-nav-agile w3layouts-womens-nav-agileits w3layouts-womens-nav-agileits-2"><p>' + data[0]['classname'] + '</p><a href="/index/product/womens?brand="'+data[0]['brandid'] +'&classid="'+data[0]['classid']+'" ><img src="' + data[0]['src'] + '"</a></div>');
+			$('#womenbaba').append('<div class="col-sm-3 w3layouts-nav-agile w3layouts-womens-nav-agileits w3layouts-womens-nav-agileits-2"><p>' + data[1]['classname'] + '</p><a href="/index/product/womens?brand="'+data[1]['brandid'] +'&classid="'+data[1]['classid']+'" ><img src="' + data[1]['src'] + '"</a></div>');
+			$('#womenbaba').append('<div class="col-sm-3 w3layouts-nav-agile w3layouts-womens-nav-agileits w3layouts-womens-nav-agileits-2"><p>' + data[2]['classname'] + '</p><a href="/index/product/womens?brand="'+data[2]['brandid'] +'&classid="'+data[2]['classid']+'" ><img src="' + data[2]['src'] + '"</a></div>');
+
+		})
+});
+
+
+$('.menbrand').mouseover(function(e) {
+	e.preventDefault();
+	var tiao = $(this).prop('href');
+	var weizhi = tiao.lastIndexOf('=');
+	var brand = tiao.substr(weizhi+1);
+	
+	$.get('/index/product/getBrandClassAndGoods?brand='+brand,
+		function(data) {
+			data = eval('(' + data + ')');
+			$('#mencontainer').siblings().remove();
+			/*
+			<div class="col-sm-3 w3layouts-nav-agile w3layouts-womens-nav-agileits w3layouts-womens-nav-agileits-2">
+				<p>A字型婚纱</p>
+				<a href="{:url('index/product/womens')}">
+					<img src="__INDEX_PUB__images/women-nav-1.jpg" alt="Groovy Apparel">
+				</a>
+			</div>
+			 */
+			$('#menbaba').append('<div class="col-sm-3 w3layouts-nav-agile w3layouts-womens-nav-agileits w3layouts-womens-nav-agileits-2"><p>' + data[0]['classname'] + '</p><a href="/index/product/womens?brand="'+data[0]['brandid'] +'&classid="'+data[0]['classid']+'" ><img src="' + data[0]['src'] + '"</a></div>');
+			$('#menbaba').append('<div class="col-sm-3 w3layouts-nav-agile w3layouts-womens-nav-agileits w3layouts-womens-nav-agileits-2"><p>' + data[1]['classname'] + '</p><a href="/index/product/womens?brand="'+data[1]['brandid'] +'&classid="'+data[1]['classid']+'" ><img src="' + data[1]['src'] + '"</a></div>');
+		})
+});
+
+        $('.aa').click(function(e){
+        	e.preventDefault();
+        	var gid = $(this).prev().val();
+        	var color = $("#color").text();
+        	var size = $("#size").html();
+        	var now_price = $('#price').html();
+        	$.post("/index/product/add",{
+        		gid:gid,
+        		color:color,
+        		size:size,
+        		now_price:now_price
+        	},function(daa)
+           {
+           		console.log(daa);
+                if (daa == 1) {
+                  alert('添加购物车成功');
+
+                }
+           });
+        });
+        $('.cc').click(function(e){
+        	e.preventDefault();
+        	var gid = $(this).prev().val();
+        	//console.log(gid);
+        	$.post("/index/product/addsc",{
+        		gid:gid
+        	},function(data)
+           {
+           		console.log(data);
+                if (data == 1) {
+                  alert('收藏成功');
+                }else{
+                	alert('此商品不能收藏');
+                }
+            });
+
+          });
+    </script> 
+	<script>
+		$(document).ready(function(){
+			$(".dropdown").hover(
+				function() {
+					$('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+					$(this).toggleClass('open');
+				},
+				function() {
+					$('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+					$(this).toggleClass('open');
+				}
+			);
+		});
+	</script>
+<!-- <script src="__INDEX_PUB__js/jquery.magnific-popup.js" type="text/javascript"></script> 
+	<script>
+		$(document).ready(function() {
+			$('.popup-with-zoom-anim').magnificPopup({
+				type: 'inline',
+				fixedContentPos: false,
+				fixedBgPos: true,
+				overflowY: 'auto',
+				closeBtnInside: true,
+				preloader: false,
+				midClick: true,
+				removalDelay: 300,
+				mainClass: 'my-mfp-zoom-in'
+			});
+		});
+	</script>-->
+<!-- <script src="__INDEX_PUB__js/cbpShop.min.js"></script> -->
+<!-- <script>
+	var shop = new cbpShop( document.getElementById( 'cbp-pgcontainer' ) ); 
+</script> -->
+<script src="__INDEX_PUB__js/bootstrap.js"></script>
+</body>
+</html>

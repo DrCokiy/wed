@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>minikind婚纱</title>
+		<style type="text/css">
+		*{margin: 0;padding: 0;}
+		a{text-decoration: none;}
+		.box a{
+			position: absolute;
+			top: 100px;
+			left: 10px;
+			font-size: 30px;
+			color: deepskyblue;
+		}
+		.one img{
+			position: absolute;
+			top: 0;
+			left: 800px;
+			animation: run 2s ease;
+			animation-fill-mode: forwards;
+		}
+		.one p{
+			position: absolute;
+			top: 100px;
+			left: auto;
+		}
+		.box1 img{
+			position: absolute;
+			top: 200px;
+			left: 700px;
+		}
+		.two img{
+			position: absolute;
+			top: 0;
+			left: 100px;
+			animation: run1 2s ease;
+			animation-fill-mode: forwards;
+		}
+		@keyframes run{
+			0%{transform: scaleX(0px);opacity: 0;}
+			100%{transform: translateX(-600px);opacity: 1;}
+		}
+		@keyframes run1{
+			0%{transform: scaleX(0px);opacity: 0;}
+			100%{transform: translateX(700px);opacity: 1;}
+		}
+		.wrap{
+				width: 1200px;
+				height: 620px;
+				margin-left: 100px;
+				margin-top: 700px;
+		}
+		.wrap li{
+			width: 400px;
+			height: 300px;
+			list-style: none;
+			display: block;
+			float: left;
+		}
+		.wrap li .boxCont img{
+			display: block;
+			float: left;
+			width: 300px;
+			height: 300px;
+			margin-top: 20px;
+			transition: all 1s;/*1s缓冲*/
+		}
+		.wrap li:hover .boxCont img{
+			transform: scale(1.5);/*图片放大*/
+		}
+		#box{
+			/*margin: 200px auto 0;*/
+			width: 400px;
+			height: 400px;
+			text-align: center;
+			overflow: hidden;
+		}
+		.mar1{
+			margin-right: 50px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<a href="{:url('index/image/west')}">
+				<img src="__INDEX_PUB__img/pic/2.png" />
+			</a>
+			<div class="box1">
+					<img src="__INDEX_PUB__img/minikind/1.png" />
+			</div>
+			<div class="one">
+				<img src="__INDEX_PUB__img/minikind/m2.jpg" />
+			</div>
+			<div class="two">
+				<img src="__INDEX_PUB__img/minikind/b8.jpg" />
+			</div>
+		</div>
+		<div class="wrap">
+		{foreach $data as $val}
+			<li>
+				<div class="boxCont" id="box" style="height: 310px;width: 310px;margin-top:20px">
+					<a href="{:url('index/product/womens_single',['gid'=>$val['gid']])}">
+						<img src="{$val['src']}" />
+					</a>
+				</div>
+			</li>
+		{/foreach}	
+		</div>
+	</body>
+</html>

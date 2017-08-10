@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	
+	<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__ADMIN_PUB__static/h-ui.admin/css/style.css" />
+<script type="text/javascript" src="__ADMIN_PUB__lib/jquery/1.11.1/jquery.min.js"></script> 
+</head>
+<body>
+<div class="page-container">
+	<form action="/admin/product/updategoods" method="post" enctype="multipart/form-data">
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>产品名称：</label>
+			<div class=" col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$data.gname}" placeholder="{$data.gname}" name="gname">
+				<input type="hidden" name="gid" value="{$data.gid}">
+			</div>
+		</div>
+		<br>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>单价：</label>
+			<div class=" col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$data.price}" placeholder="{$data.price}"  name="price">
+			</div>
+		</div>
+		<br>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>替换图片：</label>
+			<div class=" col-xs-8 col-sm-9">
+				<input type="file" class="input-text" placeholder="" name="file" value="" onchange="filechange(event)">
+			</div>
+		</div>
+			<br>
+		<div class="row cl">
+		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+			<img src="" width="200px" height="200px" id="img-change" style="display:none;">
+			
+		</div>
+		</div>
+		
+		
+
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				
+				<button class="btn btn-primary radius" id="doupdate" cancelable='false' >提交</button>
+			</div>
+		</div>
+
+
+
+	</form>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	var filechange=function(event){
+	    var files = event.target.files, file;
+	    var fileName = files[0].name;
+	    if (files && files.length > 0) {
+	        // 获取目前上传的文件
+	        file = files[0];// 文件大小校验的动作
+	        if(file.size > 1024 * 1024 * 2) {
+	            alert('图片大小不能超过 2MB!');
+	            return false;
+	        }
+	        // 获取 window 的 URL 工具
+	        var URL = window.URL || window.webkitURL;
+	        // 通过 file 生成目标 url
+	        var imgURL = URL.createObjectURL(file);
+	        console.log(imgURL);
+	        //用attr将img的src属性改成获得的url
+	        $("#img-change").css("display",'block');
+	        $("#file").prev().html(fileName);
+	        $("#img-change").attr("src",imgURL);
+	        // 使用下面这句可以在内存中释放对此 url 的伺服，跑了之后那个 URL 就无效了
+	        // URL.revokeObjectURL(imgURL);
+	    }
+	};
+
+</script>

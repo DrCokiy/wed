@@ -1,0 +1,359 @@
+<html xmlns="http://www.w3.org/1999/xhtml" class="hb-loaded">
+ <head>
+   <meta charset="utf-8"/>
+     <link href="__INDEX_PUB__css/same.css?v=1.3.7.2" type="text/css" rel="stylesheet" /> 
+  <script src="__INDEX_PUB__js/jquery.js" type="text/javascript"></script> 
+  <script src="__INDEX_PUB__js/index.js?virsion=1.3.7.2" type="text/javascript"></script> 
+  <title>个人中心 - 修改资料</title> 
+  <link href="__INDEX_PUB__css/same.css?v=1.3.7.2" type="text/css" rel="stylesheet" />
+  <link href="__INDEX_PUB__css/member.css?v=1.3.6.0" type="text/css" rel="stylesheet" /> 
+  <!-- <script src="__INDEX_PUB__js/year_month_day.js" type="text/javascript"></script>  -->
+</head>
+ <body>
+  <form id="aspnetForm" action="member_info.html" method="post" name="aspnetForm"> 
+  
+   <div> 
+  
+    <!--头部--> 
+    <div class="cmain"> 
+     <div class="headtop"> 
+      <!--头部左边--> 
+      <div class="top-left fl"> 
+       <a title="Darry Ring" href="index.html"> <img width="187" height="42" alt="Darry Ring官网" src="__INDEX_PUB__images/logo.png" /> </a>
+       <span style="font-weight: normal;">绮丽魅纱欢迎您</span> 
+      </div> 
+      <!--头部左边end--> 
+      <!--头部右边--> 
+      <div class="top-right fr"> 
+       <!--登录注册--> 
+       <ul class="tright-ul fl"> 
+        <div id="ctl00_ucheader_pllogin2"> 
+         <li><a><span id="ctl00_ucheader_lit">{$Think.session.username}</span></a></li> 
+         <li> <a href="javascript:logout()" rel="nofollow">退出</a><em>|</em> </li>  
+         <li class="headed"><em class="icon shooping"></em><a target="black" rel="nofollow" href="cart.html">购物车</a><i>(0)</i></li> 
+        </div> 
+       </ul> 
+       </div> 
+      </div> 
+      <!--头部右边end--> 
+     </div> 
+    </div> 
+    <!--头部end--> 
+    <!--导航--> 
+    <div class="nav"> 
+      <div class="cmain"> 
+      <!--导航的左边--> 
+      <ul class="nav-ul fl"> 
+         <li><a href="{:url('index/index/index')}">首页</a> </li>
+         <li><a style="font-family:arial" href="{:url('index/product/womens')}">女装</a> </li> 
+         <li><a style="font-family:arial" href="{:url('index/product/mens')}">男装</a> </li>
+         <li><a style="font-family:arial" href="{:url('index/product/list')}">婚戒</a> </li> 
+         <li><a href="{:url('index/user/member_index')}">个人中心</a></li> 
+      </ul> 
+      <ul class="nav-right fr"> 
+        <li class="lipos"><em></em><a href="{:url('index/user/news_detail')}">最新活动</a> <i class="icon"></i></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <!--导航end--> 
+    <script type="text/javascript">
+    function logout() {
+        if (window.confirm('确定退出吗？')) {
+
+            $.get("/nAPI/QuitExit.ashx", function (data) {
+                window.location.href = "/";
+            });
+        }
+    }
+</script> 
+    <div class="cort"> 
+     <!--中间--> 
+     <div class="cort"> 
+      <!--内容--> 
+      <div class="cmain mb_back"> 
+      
+       <!--中间内容--> 
+       <div class="member_cort"> 
+        <!--左边树--> 
+        <div class="member_cort-left fl"> 
+         <!--我的DR--> 
+        <div class="member_cortleft-tittle">
+                <i class="mb_home"></i><a rel="nofollow">我的世界</a>
+              </div>
+                <!--我的DR end-->
+                <ul class="member_cort-ul">
+                    <li id="ctl00_content_ucmemberleft_cart">
+                    <a rel="nofollow" href="{:url('index/user/member_index')}">我的世界</a></li>
+                    <li>
+                        <h3>-订单中心-</h3>
+                        <ul class="member_ul-dr">
+                            <li class="speacil_color" id="ctl00_content_ucmemberleft_order"><a rel="nofollow" href="{:url('index/user/member_order')}">我的订单</a></li>
+                            <li id="ctl00_content_ucmemberleft_cart"><a rel="nofollow" href="{:url('index/shopcar/cart')}" target="_blank">我的购物车</a></li>
+                            <li id="ctl00_content_ucmemberleft_collect"><a rel="nofollow" href="{:url('index/user/member_buy')}">未付款</a></li>
+                            <li id="ctl00_content_ucmemberleft_collect"><a rel="nofollow" href="{:url('index/user/state1')}">已付款</a></li>
+                            <li id="ctl00_content_ucmemberleft_collect"><a rel="nofollow" href="{:url('index/user/state2')}">待收货</a></li>
+                            <li id="ctl00_content_ucmemberleft_collect"><a rel="nofollow" href="{:url('index/user/state3')}">确认收货</a></li>
+                            <li id="ctl00_content_ucmemberleft_collect"><a rel="nofollow" href="{:url('index/user/member_collect')}">我的收藏</a></li>
+                        </ul>
+                    </li>
+                   <li>
+                        <h3>-魅莎服务-</h3>
+                        <ul class="member_ul-dr">
+                            <li id="ctl00_content_ucmemberleft_salAfter">
+                              <a rel="nofollow" href="{:url('index/user/member_car')}">婚车送喜</a>
+                            </li>
+                             <li id="ctl00_content_ucmemberleft_salAfter">
+                              <a rel="nofollow" href="{:url('index/user/member_place')}">婚庆场地</a>
+                            </li>
+                            <li id="ctl00_content_ucmemberleft_salAfter">
+                              <a rel="nofollow" href="{:url('index/user/member_sell')}">售后处理</a>
+                            </li>
+                        </ul>
+                    </li> 
+                    <li>
+                        <h3>
+                            -帐户管理-</h3>
+                        <ul class="member_ul-dr">
+                            <li id="ctl00_content_ucmemberleft_salAfter">
+                              <a rel="nofollow" href="{:url('index/user/member_bank')}">添加银行卡</a>
+                            </li>
+                            <li id="ctl00_content_ucmemberleft_myinfo"><a rel="nofollow" href="{:url('index/user/member_info')}">个人信息</a></li>
+                            <li id="ctl00_content_ucmemberleft_password"><a rel="nofollow" href="{:url('index/user/member_pwd')}">修改密码</a></li>
+                            <li id="ctl00_content_ucmemberleft_address"><a rel="nofollow" href="{:url('index/user/member_addr')}">收货地址</a></li>
+                            <li class="no_border" id="ctl00_content_ucmemberleft_news"><a rel="nofollow" href="{:url('index/user/news_detail')}">系统消息</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        <!--左边树end--> 
+        <!--右边的主要内容--> 
+        <div class="member_cort-right fr"> 
+         <!--我的个人信息--> 
+         <div class="member_person"> 
+          <div class="member_ask-tittle"> 
+           <h4> 收到宝贝，请评价吧！</h4> 
+           <p> </p> 
+          </div> 
+          <!--个人信息填写--> 
+          <div class="member_person-cort"> 
+           <!--左边--> 
+           <div class="member_person-cort_left"> 
+            <div class="person-cort_left-word"> 
+             <span id="sp_email"></span> 
+            </div> 
+            <div class="person-cort_left-word person-cort_left-spword"> 
+             <span>可享受更多魅纱为您提供的贴心服务与提醒通知。</span> 
+            </div> 
+            <div class="person-cort_left-write">
+                <input type="hidden" value="{$gid}" id="gid">
+                <img width="90" height="90" src="{$src}" />
+            </div>
+            <div><p>评价宝贝</p></div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <input type="radio"  class="type" value="1"  name="check" checked/>好评&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio"  class="type" value="2"  name="check"/>中评&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio"  class="type" value="3"  name="check"/>差评
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+              <div class="person-cort_left-write"> 
+             <span class="write_vtop">评价：</span> 
+             <textarea id="street" cols="20" rows="2" name="content"></textarea> 
+             <span id="streid" style="display: none"><i class="writer_wrong"></i><em id="strewrong" class="writer_word"></em></span>
+             <span id="strey" style="display: none"><i class="writer_right"> </i></span> 
+            </div>
+            <div id="btnsave" class="bt1 person-cort_left-button">
+              &gt; 保存
+            </div> 
+           </div> 
+           <script type="text/javascript">
+                $('#btnsave').click(function(){
+                    var content = document.getElementById('street').value;
+                    var type = $('.type:checked').val();
+                    var gid = document.getElementById('gid').value
+                    // console.log(content);
+                    // console.log(type);
+                     // console.log(gid);
+                    $.post("{:url('index/user/addcomment')}",{
+                        content:content,
+                        class:type,
+                        gid:gid
+                    },function(data){
+                        //console.log(data);
+                       if (data == 1) {
+                        alert('评论成功');
+                        window.location.href = "/index/user/state3";
+                       }else{
+                        alert('评论失败');
+                       }
+                    })
+                })
+           </script>
+           <!--左边end--> 
+           <!--右边--> 
+           <div class="member_person-cort_right"> 
+            <a href="#">  </a> 
+            
+           </div> 
+           <!--右边end--> 
+          </div> 
+          <!--个人信息填写end--> 
+         </div> 
+         <!--我的个人信息end--> 
+        </div> 
+        <!--右边的主要内容end--> 
+       </div> 
+       <!--中间内容end--> 
+      </div> 
+      <!--内容end--> 
+     </div> 
+     <!--中间end--> 
+    </div> 
+    <!--底部--> 
+    <div class="footer"> 
+     <div class="cmain"> 
+      <ul class="Service_ul"> 
+       <!--每一块li--> 
+       <li> 
+        <div class="Service_ul-img"> 
+         <a href="index.html/help_ab/51.html" rel="nofollow"></a> 
+        </div> <a href="index.html/help_ab/51.html" rel="nofollow"><p>权威认证</p></a> </li> 
+       <!--每一块li--> 
+       <li> 
+        <div class="Service_ul-img bk_2"> 
+         <a href="index.html/help_se/81.html" rel="nofollow"></a> 
+        </div> <a href="index.html/help_se/81.html" rel="nofollow"><p> 一钻双证</p></a> </li> 
+       <!--每一块li--> 
+       <li> 
+        <div class="Service_ul-img bk_3"> 
+         <a href="index.html/help_se/80.html" rel="nofollow"></a> 
+        </div> <a href="index.html/help_se/80.html" rel="nofollow"> <p> 终生保养</p></a> </li> 
+       <!--每一块li--> 
+       <li> 
+        <div class="Service_ul-img bk_4"> 
+         <a href="index.html/help_se/82.html" rel="nofollow"></a> 
+        </div> <a href="index.html/help_se/82.html" rel="nofollow"> <p> 以小换大</p></a> </li> 
+       <!--每一块li--> 
+       <li> 
+        <div class="Service_ul-img bk_5"> 
+         <a href="index.html/help_se/84.html" rel="nofollow"></a> 
+        </div> <a href="index.html/help_se/84.html" rel="nofollow"> <p> 15天退换</p></a> </li> 
+       <!--每一块li--> 
+       <li> 
+        <div class="Service_ul-img bk_6"> 
+         <a href="index.html/help/74.html" rel="nofollow"></a> 
+        </div> <a href="index.html/help/74.html" rel="nofollow"> <p> 全国免运费</p></a> </li> 
+       <!--每一块li--> 
+       <li> 
+        <div class="Service_ul-img bk_7"> 
+         <a href="index.html/help_se/83.html" rel="nofollow"></a> 
+        </div> <a href="index.html/help_se/83.html" rel="nofollow"><p> 全程保险</p></a> </li> 
+      </ul> 
+      <!--服务条款--> 
+      <div class="service"> 
+       <!--二维码--> 
+       <div class="erwei fl"> 
+        <img width="90" height="90" alt="Darry Ring 官方微信" src="__INDEX_PUB__images/erwei.jpg" /> 
+       </div> 
+       <!--中间的联系方式--> 
+       <div class="know_right fl"> 
+        <p> 24小时全国免费服务热线</p> 
+        <img width="171" height="32" src="__INDEX_PUB__images/tel.jpg" /> 
+        <p class="theshare"> <span>关注我们：</span> <a class="wb" target="_blank" href="http://weibo.com/13520comcn" rel="nofollow"></a> <a class="rr" target="_blank" href="http://e.t.qq.com/DarryRing" rel="nofollow"></a> <a class="qzone" target="_blank" title="QQ空间" href="http://user.qzone.qq.com/2678181289/" rel="nofollow"></a> </p> 
+       </div> 
+       <!--左边的服务条款--> 
+       <ul class="Service_know fr"> 
+        <!--每一块li--> 
+        <li> <h3> 关于我们</h3> <p> <a target="_blank" href="index.html/help_ab/66.html" rel="nofollow">权威认证</a></p> <p> <a target="_blank" href="index.html/help_ab/68.html" rel="nofollow">商务合作</a></p> <p> <a target="_blank" href="index.html/help_ab/70.html" rel="nofollow">加入我们</a></p> </li> 
+        <!--每一块li--> 
+        <li> <h3> 关于购买</h3> <p> <a target="_blank" href="index.html/help/72.html" rel="nofollow">购买流程</a></p> <p> <a target="_blank" href="index.html/help/73.html" rel="nofollow">支付方式</a></p> <p> <a target="_blank" href="index.html/help/74.html" rel="nofollow">配送流程</a></p> </li> 
+        <!--每一块li--> 
+        <li> <h3> 关于退换</h3> <p> <a target="_blank" href="index.html/help/75.html" rel="nofollow">退货流程</a></p> <p> <a target="_blank" href="index.html/help/76.html" rel="nofollow">办理售后</a></p> <p> <a target="_blank" href="index.html/help_se/84.html" rel="nofollow">15天退换</a></p> </li> 
+       </ul> 
+      </div> 
+      <!--条文-->
+     </div> 
+    </div> 
+    <div class="model" id="model"> 
+     <div class="Prompt" id="Prompt"> 
+     </div> 
+     <span id="log_uid" style="display:none"></span> 
+     <span id="log_uname" style="display:none"></span> 
+     <span id="log_orderid" style="display:none"></span> 
+     <span id="log_price" style="display:none"></span> 
+    </div> 
+    <script src="http://wpa.b.qq.com/cgi/wpa.php" charset="utf-8" type="text/javascript"></script> 
+    <!--客服(2014年8月29日)--> 
+    <div style="display:none" class="Ffloat_kf"> 
+     <div class="fkf_top"> 
+      <div style="cursor: pointer; display: none;" id="bridgehead"> 
+      </div> 
+      <div id="BizQQWPA"></div> 
+      <div onClick="showModel(modelsever);" style="cursor: pointer;" class="qq_hover" id="qqTalk_head"> 
+      </div> 
+      <div id="BizQQWPAB" class="sh"> 
+      </div> 
+      <div id="bdBridge"> 
+       <a href="javascript:NTKF.im_openInPageChat()"> <img width="75" height="37" src="__INDEX_PUB__images/zx.jpg" /></a>
+      </div> 
+     </div> 
+     <div class="fkf_bottom"> 
+      <img width="92" height="82" alt="Darry Ring 官方微信" src="__INDEX_PUB__images/to_erwei.jpg" /> 
+      <a href="#"> <img width="92" height="26" src="__INDEX_PUB__images/db.jpg" /></a> 
+     </div> 
+    </div> 
+    <!--新版右边客服start--> 
+    <!--右边漂浮悬挂大的--> 
+    <div class="float_big"> 
+     <div class="floatbig_hide fr"></div> 
+     <div class="floatbig_center"> 
+      <!--客服--> 
+      <div onClick="javascript:NTKF.im_openInPageChat();" id="Bearonline" class="floatbig_center-kf"></div> 
+      <!--客服end--> 
+      <!--定制咨询--> 
+      <div id="dzzxonline" class="floatbig_center-zx"> 
+       <a href="javascript:showModel(modelsever);"></a> 
+      </div> 
+      <!--定制咨询end--> 
+      <img src="__INDEX_PUB__images/ew.jpg" /> 
+     </div> 
+    </div> 
+    <!--右边漂浮悬挂大的end--> 
+    <!--右边漂浮悬挂小的--> 
+    <div class="float_small"> 
+     <div class="floatbig_show fr"></div> 
+     <div class="floatbig_center"> 
+      <!--客服--> 
+      <div onClick="javascript:NTKF.im_openInPageChat();" class="floatsmall_center-kf fr"></div> 
+      <!--客服end--> 
+      <!--定制咨询--> 
+      <div class="floatsmall_center-zx fr"> 
+       <a href="javascript:showModel(modelsever);"></a> 
+      </div> 
+      <!--定制咨询end--> 
+      <!--二维码--> 
+      <div class="floatsmall_erwei fr"> 
+       <a href="#"></a> 
+      </div> 
+      <!--二维码end--> 
+     </div> 
+    </div> 
+    <!--右边漂浮悬挂小的end--> 
+    <!--返回顶部--> 
+    <div class="comeback"></div> 
+    <!--返回顶部end--> 
+    <!--新版右边客服end--> 
+    <div style="position: fixed; cursor: pointer; right: 6px; top: 289px; padding-bottom: 152px; z-index: 9999; width: 19px; height: 103px; display: none;" onClick="openserver();" id="openbnt"> 
+     <img width="19" height="103" src="__INDEX_PUB__images/server_03.jpg" />
+    </div> 
+    <div id="box5" class="box5"> 
+    <div onClick="contenttxt(5,1)" id="content_title_51" class="content_title"></div> 
+     
+     <div id="qqku" class="cs_bottom">
+       没有您关注的问题？ 
+      <span onClick="javascript:window.open('http://b.qq.com/webc.htm?new=0&amp;sid=4000113520&amp;eid=218808P8z8p8P808p8R8K&amp;o=13520.com.cn&amp;q=7&amp;ref='+document.location, '_blank', 'height=10, width=10,toolbar=no,scrollbars=no,menubar=no,status=no');" style="cursor: pointer; color:#c2967e; font-size:16px; font-weight:bold;">立即联系在线客服</span> 
+     </div> 
+    </div> 
+   
+ </body>
+</html>

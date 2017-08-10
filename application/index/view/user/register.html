@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒老师</title>
+	<meta name="keywords" content="盒老师">
+	<meta name="content" content="盒老师">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <link type="text/css" rel="stylesheet" href="__INDEX_PUB__css/login.css">
+    <script type="text/javascript" src="__INDEX_PUB__js/jquery.min.js"></script>
+
+</head>
+<body class="login_bj" >
+
+<div class="zhuce_body">
+	<div class="logo"><a href="#"><img src="__INDEX_PUB__images/logo.png" width="114" height="54" border="0"></a></div>
+    <div class="zhuce_kong">
+    	<div class="zc">
+        	<div class="bj_bai">
+            <h3>欢迎注册</h3>
+       	  	  <form action="{:url('index/user/userRegister')}" >
+                    <input name="realname" type="text" class="kuang_txt phone" placeholder="真实姓名">
+                    <input name="phone" type="text" class="kuang_txt phone" placeholder="手机号">
+                    <input name="email" type="text" class="kuang_txt email" placeholder="邮箱">
+                    <input name="password" type="text" class="kuang_txt possword" placeholder="密码">
+                    <input name="repassword" type="text" class="kuang_txt possword" placeholder="确认密码">
+                     <div>
+                        <input class="text" type="text" name="yzm" placeholder="验证码" style="width:60px;" id="yzm" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="{:captcha_src()}" onclick="show()" id="ok">
+                    </div>
+                    <input name="register" type="submit" class="btn_zhuce" value="注册">
+                </form>
+            </div>
+        	<div class="bj_right">
+            	<p>使用以下账号直接登录</p>
+                <a href="#" class="zhuce_qq">QQ注册</a>
+                <a href="#" class="zhuce_wb">微博注册</a>
+                <a href="#" class="zhuce_wx">微信注册</a>
+                <p>已有账号？<a href="{:url('index/user/login')}">马上登陆</a></p>
+            
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+ <script type="text/javascript">
+    // 刷新验证码
+    function show()
+    {
+        var img = document.getElementById('ok');
+        var src = img.src;
+        img.src = src + '?rand=' + Math.random();
+    }
+   
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PHP利用smtp类发送邮件范例</title>
+</head>
+<body>
+<form action="" method="post">
+	<p>收件人：<input type="text" name="toemail" value="{$res['email']}" /></p>
+	<p>标&nbsp;&nbsp;题：<input type="text" name="title" value="" id="title" /></p>
+	<p>内&nbsp;&nbsp;容：<textarea name="content" cols="50" rows="5" value="" id="content"></textarea></p>
+	<p><input type="submit" value="发送"  id="send"/></p>
+</form>
+</body>
+</html>
+ <script type="text/javascript" src="__ADMIN_PUB__lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript">
+$('#send').click(function(e){
+	e.preventDefault();
+	var title = $('#title').val();
+	var content = $('#content').val();
+	// console.log(content);
+	$.get("/admin/comment/send",{
+		toemail:$('input[name=toemail]').val(),
+		title:title,
+		content:content
+	},function(data){
+		if (1 == data) {
+			alert('回复成功');
+			parent.location.reload();
+		}
+	});
+});
+</script>
